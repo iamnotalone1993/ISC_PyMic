@@ -1,0 +1,137 @@
+% This is LLNCS.DEM the demonstration file of
+% the LaTeX macro package from Springer-Verlag
+% for Lecture Notes in Computer Science,
+% version 2.4 for LaTeX2e as of 16. April 2010
+%
+\documentclass{llncs}
+%
+\usepackage{makeidx}  % allows for indexgeneration
+%
+\usepackage[misc]{ifsym}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{float}
+
+
+%
+\begin{document}
+%
+\frontmatter          % for the preliminaries
+%
+\pagestyle{headings}  % switches on printing of running heads
+\addtocmark{Hamiltonian Mechanics} % additional mark in the TOC
+%
+\title{pyMIC2: A Supporting Deep Learning and Python Offload Module for Intel Xeon Phi}
+%
+\titlerunning{pyMIC2}  % abbreviated title (for running head)
+%                                     also used for the TOC unless
+%                                     \toctitle is used
+%
+\author{Anh-Tu Ngoc Tran\textsuperscript{(\Letter)} \and
+Phu  \and
+Tri \and
+Thanh-Dang Diep \orcidID{0000-0003-1163-7464} \and
+Hung \and
+Nam Thoai
+}
+%
+\authorrunning{Ivar Ekeland et al.} % abbreviated author list (for running head)
+%
+%%%% list of authors for the TOC (use if author list has to be modified)
+\tocauthor{Ivar Ekeland, Roger Temam, Jeffrey Dean, David Grove,
+Craig Chambers, Kim B. Bruce, and Elisa Bertino}
+%
+\institute{Faculty of Computer Science and Engineering\\ HCMC University of Technology, VNUHCM, Vietnam\\
+\email{\{51304672,51302990,...\}@hcmut.edu.vn},\\ %WWW home page:
+%\texttt{http://users/\homedir iekeland/web/welcome.html}
+%\and
+%Universit\'{e} de Paris-Sud,
+%Laboratoire d'Analyse Num\'{e}rique, B\^{a}timent 425,\\
+%F-91405 Orsay Cedex, France
+}
+
+\maketitle              % typeset the title of the contribution
+
+\begin{abstract}
+The abstract should summarize the contents of the paper
+using at least 70 and at most 150 words. It will be set in 9-point
+font size and be inset 1.0 cm from the right and left margins.
+There will be two blank lines before and after the Abstract. \dots
+\input{abstract}
+
+\keywords{computational geometry, graph theory, Hamilton cycles}
+\end{abstract}
+%
+\section{Introduction, 2 pages}
+%
+With this chapter, the preliminaries are over, and we begin the search
+for periodic solutions to Hamiltonian systems. All this will be done in
+the convex case; that is, we shall study the boundary-value problem
+\input{introduction}
+
+\section{Background, 2 pages}
+\input{background}
+
+\section{Implementation, 2 pages}
+table of function: name functionality, input, output
+\pagebreak
+\section{Evaluation, 10 pages}
+\input{function_evaluation}
+
+%%%% TRI %%%
+\input{chainer}
+%%%%%%%%%%%%
+
+\section{Discussion, 1page}
+\input{discussion}
+
+\section{Conclusions and Future Work, 1 page}
+\input{conclusion}
+
+\bibliographystyle{splncs03}
+\bibliography{refs}
+%
+% ---- Bibliography ----
+%
+%\begin{thebibliography}{}
+%%
+%\bibitem[1980]{2clar:eke}
+%Clarke, F., Ekeland, I.:
+%Nonlinear oscillations and
+%boundary-value problems for Hamiltonian systems.
+%Arch. Rat. Mech. Anal. 78, 315--333 (1982)
+%
+%\bibitem[1981]{2clar:eke:2}
+%Clarke, F., Ekeland, I.:
+%Solutions p\'{e}riodiques, du
+%p\'{e}riode donn\'{e}e, des \'{e}quations hamiltoniennes.
+%Note CRAS Paris 287, 1013--1015 (1978)
+%
+%\bibitem[1982]{2mich:tar}
+%Michalek, R., Tarantello, G.:
+%Subharmonic solutions with prescribed minimal
+%period for nonautonomous Hamiltonian systems.
+%J. Diff. Eq. 72, 28--55 (1988)
+%
+%\bibitem[1983]{2tar}
+%Tarantello, G.:
+%Subharmonic solutions for Hamiltonian
+%systems via a $\bbbz_{p}$ pseudoindex theory.
+%Annali di Matematica Pura (to appear)
+%
+%\bibitem[1985]{2rab}
+%Rabinowitz, P.:
+%On subharmonic solutions of a Hamiltonian system.
+%Comm. Pure Appl. Math. 33, 609--633 (1980)
+%
+%\end{thebibliography}
+\clearpage
+%\addtocmark[2]{Author Index} % additional numbered TOC entry
+%\renewcommand{\indexname}{Author Index}
+%\printindex
+%\clearpage
+%\addtocmark[2]{Subject Index} % additional numbered TOC entry
+%\markboth{Subject Index}{Subject Index}
+%\renewcommand{\indexname}{Subject Index}
+%\input{subjidx.ind}
+\end{document}
