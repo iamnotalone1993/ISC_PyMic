@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.9.18)  11 DEC 2017 16:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.9.18)  13 DEC 2017 11:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -575,11 +575,11 @@ Package pdftex.def Info: img/a.pdf used on input line 54.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 62.
 
-<img/b.pdf, id=503, 490.05643pt x 324.53748pt>
+<img/b.pdf, id=503, 492.02179pt x 321.7882pt>
 File: img/b.pdf Graphic file (type pdf)
  <use img/b.pdf>
 Package pdftex.def Info: img/b.pdf used on input line 64.
-(pdftex.def)             Requested size: 245.02762pt x 162.26834pt.
+(pdftex.def)             Requested size: 246.01028pt x 160.89369pt.
 
 
 LaTeX Warning: No positions in optional float specifier.
@@ -616,10 +616,10 @@ cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pf
 b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on llncs.pdf (12 pages, 3150985 bytes).
+Output written on llncs.pdf (12 pages, 3178362 bytes).
 PDF statistics:
- 716 PDF objects out of 1000 (max. 8388607)
- 503 compressed objects within 6 object streams
+ 810 PDF objects out of 1000 (max. 8388607)
+ 565 compressed objects within 6 object streams
  0 named destinations out of 1000 (max. 500000)
  126 words of extra memory for PDF output out of 10000 (max. 10000000)
 
