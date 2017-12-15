@@ -3,44 +3,47 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: llncs.aux
 The style file: splncs03.bst
 Database file #1: refs.bib
-You've used 2 entries,
+Warning--I didn't find a database entry for "colfaxbook"
+Warning--empty year in phibook
+You've used 1 entry,
             2785 wiz_defined-function locations,
-            596 strings with 4679 characters,
-and the built_in function-call counts, 990 in all, are:
-= -- 82
-> -- 24
-< -- 2
-+ -- 10
-- -- 8
-* -- 60
-:= -- 134
-add.period$ -- 2
-call.type$ -- 2
-change.case$ -- 10
+            588 strings with 4532 characters,
+and the built_in function-call counts, 345 in all, are:
+= -- 21
+> -- 12
+< -- 0
++ -- 5
+- -- 4
+* -- 20
+:= -- 55
+add.period$ -- 1
+call.type$ -- 1
+change.case$ -- 5
 chr.to.int$ -- 0
 cite$ -- 2
-duplicate$ -- 91
-empty$ -- 87
-format.name$ -- 10
-if$ -- 210
+duplicate$ -- 32
+empty$ -- 29
+format.name$ -- 5
+if$ -- 64
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 18
-newline$ -- 11
-num.names$ -- 4
-pop$ -- 30
+int.to.str$ -- 1
+missing$ -- 8
+newline$ -- 8
+num.names$ -- 2
+pop$ -- 19
 preamble$ -- 1
-purify$ -- 8
+purify$ -- 4
 quote$ -- 0
-skip$ -- 29
+skip$ -- 8
 stack$ -- 0
-substring$ -- 58
-swap$ -- 50
-text.length$ -- 2
+substring$ -- 5
+swap$ -- 12
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 8
-warning$ -- 0
-while$ -- 9
-width$ -- 3
-write$ -- 23
+type$ -- 4
+warning$ -- 1
+while$ -- 2
+width$ -- 2
+write$ -- 12
+(There were 2 warnings)

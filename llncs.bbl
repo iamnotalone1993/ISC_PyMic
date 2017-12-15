@@ -2,12 +2,8 @@
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 
-\bibitem{klemm2014pymic}
-Klemm, M., Enkovaara, J.: pymic: A python offload module for the intel xeon phi
-  coprocessor. Proceedings of PyHPC  (2014)
-
-\bibitem{smith1981identification}
-Smith, T.F., Waterman, M.S.: Identification of common molecular subsequences.
-  Journal of molecular biology  147(1),  195--197 (1981)
+\bibitem{phibook}
+Jeffers, J., Reinders, J.: Intel xeon phi coprocessor high performance
+  programming, 2013. Journal of Computer Science \& Technology
 
 \end{thebibliography}
