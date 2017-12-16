@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.25)  15 DEC 2017 01:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.25)  16 DEC 2017 11:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -328,8 +328,12 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbraceleft' on input line 75.
 
-(./abstract.tex) (./introduction.tex) (./background.tex
-<img/mic-arch.png, id=1, 797.98125pt x 415.5525pt>
+(./abstract.tex) (./introduction.tex [1
+
+
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) [2] (.
+/background.tex
+<img/mic-arch.png, id=19, 797.98125pt x 415.5525pt>
 File: img/mic-arch.png Graphic file (type png)
  <use img/mic-arch.png>
 Package pdftex.def Info: img/mic-arch.png used on input line 7.
@@ -339,23 +343,14 @@ Overfull \hbox (11.9647pt too wide) in paragraph at lines 7--8
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[1
-
-
-{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<img/pymic-feat.pdf, id=18, 206.7725pt x 196.735pt>
+[3 <./img/mic-arch.png>] <img/pymic-feat.pdf, id=25, 206.7725pt x 196.735pt>
 File: img/pymic-feat.pdf Graphic file (type pdf)
- <use img/pymic-feat.pdf>
+
+<use img/pymic-feat.pdf>
 Package pdftex.def Info: img/pymic-feat.pdf used on input line 20.
 (pdftex.def)             Requested size: 103.38599pt x 98.36725pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<img/pymic-arch.png, id=19, 414.54875pt x 261.97874pt>
+<img/pymic-arch.png, id=26, 414.54875pt x 261.97874pt>
 File: img/pymic-arch.png Graphic file (type png)
 
 <use img/pymic-arch.png>
@@ -365,7 +360,7 @@ Package pdftex.def Info: img/pymic-arch.png used on input line 29.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[2 <./img/mic-arch.png>] [3 <./img/pymic-feat.pdf> <./img/pymic-arch.png>]
+[4 <./img/pymic-feat.pdf>]
 (/usr/local/texlive/2017/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
@@ -375,7 +370,7 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (/usr/local/texlive/2017/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
-<img/working-mechanism.pdf, id=58, 318.18875pt x 341.275pt>
+<img/working-mechanism.pdf, id=60, 318.18875pt x 341.275pt>
 File: img/working-mechanism.pdf Graphic file (type pdf)
 
 <use img/working-mechanism.pdf>
@@ -385,8 +380,8 @@ Package pdftex.def Info: img/working-mechanism.pdf used on input line 99.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./implementation.tex [4] [5]) (./function_evaluation.tex [6 <./img/working-m
-echanism.pdf>]
+) (./implementation.tex [5 <./img/pymic-arch.png>] [6] [7])
+(./function_evaluation.tex [8 <./img/working-mechanism.pdf>]
 Overfull \hbox (37.90501pt too wide) in paragraph at lines 13--14
 []\OT1/cmr/m/n/10 [https://software.intel.com/en-us/mkl-linux-developer-guide-i
 mproving-performance-
@@ -404,25 +399,25 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 103.
 
-<img/group1/eq.pdf, id=82, 361.35pt x 216.81pt>
+<img/group1/eq.pdf, id=89, 361.35pt x 216.81pt>
 File: img/group1/eq.pdf Graphic file (type pdf)
  <use img/group1/eq.pdf>
 Package pdftex.def Info: img/group1/eq.pdf used on input line 104.
 (pdftex.def)             Requested size: 180.67456pt x 108.40472pt.
 
-<img/group1/gt.pdf, id=83, 361.35pt x 216.81pt>
+<img/group1/gt.pdf, id=90, 361.35pt x 216.81pt>
 File: img/group1/gt.pdf Graphic file (type pdf)
  <use img/group1/gt.pdf>
 Package pdftex.def Info: img/group1/gt.pdf used on input line 105.
 (pdftex.def)             Requested size: 180.67456pt x 108.40472pt.
 
-<img/group1/ne.pdf, id=84, 361.35pt x 216.81pt>
+<img/group1/ne.pdf, id=91, 361.35pt x 216.81pt>
 File: img/group1/ne.pdf Graphic file (type pdf)
  <use img/group1/ne.pdf>
 Package pdftex.def Info: img/group1/ne.pdf used on input line 106.
 (pdftex.def)             Requested size: 180.67456pt x 108.40472pt.
 
-<img/group1/or.pdf, id=85, 361.35pt x 216.81pt>
+<img/group1/or.pdf, id=92, 361.35pt x 216.81pt>
 File: img/group1/or.pdf Graphic file (type pdf)
  <use img/group1/or.pdf>
 Package pdftex.def Info: img/group1/or.pdf used on input line 107.
@@ -437,15 +432,13 @@ Overfull \hbox (16.28113pt too wide) in paragraph at lines 104--108
 [] [] 
  []
 
-[7] [8 <./img/group1/eq.pdf> <./img/group1/gt.pdf> <./img/group1/ne.pdf> <./img
-/group1/or.pdf>] <img/group2/abs.pdf, id=149, 361.35pt x 216.81pt>
+<img/group2/abs.pdf, id=93, 361.35pt x 216.81pt>
 File: img/group2/abs.pdf Graphic file (type pdf)
-
-<use img/group2/abs.pdf>
+ <use img/group2/abs.pdf>
 Package pdftex.def Info: img/group2/abs.pdf used on input line 155.
 (pdftex.def)             Requested size: 180.67456pt x 108.40472pt.
 
-<"img/group2/argmax axis1".pdf, id=150, 361.35pt x 216.81pt>
+<"img/group2/argmax axis1".pdf, id=94, 361.35pt x 216.81pt>
 File: "img/group2/argmax axis1".pdf Graphic file (type pdf)
 
 <use "img/group2/argmax axis1".pdf>
@@ -456,7 +449,8 @@ Overfull \hbox (16.28113pt too wide) in paragraph at lines 155--157
 [][] [] 
  []
 
-<img/group2/maximum.pdf, id=151, 361.35pt x 216.81pt>
+[9] [10 <./img/group1/eq.pdf> <./img/group1/gt.pdf> <./img/group1/ne.pdf> <./im
+g/group1/or.pdf>] <img/group2/maximum.pdf, id=157, 361.35pt x 216.81pt>
 File: img/group2/maximum.pdf Graphic file (type pdf)
 
 <use img/group2/maximum.pdf>
@@ -467,13 +461,13 @@ Package pdftex.def Info: img/group2/maximum.pdf used on input line 161.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 164.
 
-<img/group2/mean.pdf, id=152, 361.35pt x 216.81pt>
+<img/group2/mean.pdf, id=158, 361.35pt x 216.81pt>
 File: img/group2/mean.pdf Graphic file (type pdf)
  <use img/group2/mean.pdf>
 Package pdftex.def Info: img/group2/mean.pdf used on input line 165.
 (pdftex.def)             Requested size: 180.67456pt x 108.40472pt.
 
-<"img/group2/sum axis0".pdf, id=153, 361.35pt x 217.81375pt>
+<"img/group2/sum axis0".pdf, id=159, 361.35pt x 217.81375pt>
 File: "img/group2/sum axis0".pdf Graphic file (type pdf)
 
 <use "img/group2/sum axis0".pdf>
@@ -488,14 +482,14 @@ Overfull \hbox (16.28113pt too wide) in paragraph at lines 165--167
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 169.
 
-<"img/group2/sum axis1".pdf, id=154, 361.35pt x 216.81pt>
+<"img/group2/sum axis1".pdf, id=160, 361.35pt x 216.81pt>
 File: "img/group2/sum axis1".pdf Graphic file (type pdf)
 
 <use "img/group2/sum axis1".pdf>
 Package pdftex.def Info: "img/group2/sum axis1".pdf used on input line 170.
 (pdftex.def)             Requested size: 180.67456pt x 108.40472pt.
 
-<"img/group2/sum axisNone".pdf, id=155, 361.35pt x 216.81pt>
+<"img/group2/sum axisNone".pdf, id=161, 361.35pt x 216.81pt>
 File: "img/group2/sum axisNone".pdf Graphic file (type pdf)
 
 <use "img/group2/sum axisNone".pdf>
@@ -510,7 +504,7 @@ Overfull \hbox (16.28113pt too wide) in paragraph at lines 170--172
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 174.
 
-<"img/group2/add same shape".pdf, id=156, 361.35pt x 216.81pt>
+<"img/group2/add same shape".pdf, id=162, 361.35pt x 216.81pt>
 File: "img/group2/add same shape".pdf Graphic file (type pdf)
 
 <use "img/group2/add same shape".pdf>
@@ -518,7 +512,7 @@ Package pdftex.def Info: "img/group2/add same shape".pdf used on input line 175
 .
 (pdftex.def)             Requested size: 180.67456pt x 108.40472pt.
 
-<"img/group2/add diff shape".pdf, id=157, 361.35pt x 217.81375pt>
+<"img/group2/add diff shape".pdf, id=163, 361.35pt x 217.81375pt>
 File: "img/group2/add diff shape".pdf Graphic file (type pdf)
 
 <use "img/group2/add diff shape".pdf>
@@ -534,7 +528,7 @@ Overfull \hbox (16.28113pt too wide) in paragraph at lines 175--177
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 179.
 
-<"img/group2/sub same shape".pdf, id=158, 361.35pt x 216.81pt>
+<"img/group2/sub same shape".pdf, id=164, 361.35pt x 216.81pt>
 File: "img/group2/sub same shape".pdf Graphic file (type pdf)
 
 <use "img/group2/sub same shape".pdf>
@@ -542,7 +536,7 @@ Package pdftex.def Info: "img/group2/sub same shape".pdf used on input line 180
 .
 (pdftex.def)             Requested size: 180.67456pt x 108.40472pt.
 
-<"img/group2/sub diff shape".pdf, id=159, 361.35pt x 216.81pt>
+<"img/group2/sub diff shape".pdf, id=165, 361.35pt x 216.81pt>
 File: "img/group2/sub diff shape".pdf Graphic file (type pdf)
 
 <use "img/group2/sub diff shape".pdf>
@@ -558,7 +552,7 @@ Overfull \hbox (16.28113pt too wide) in paragraph at lines 180--182
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 184.
 
-<"img/group2/mul diff shape".pdf, id=160, 361.35pt x 217.81375pt>
+<"img/group2/mul diff shape".pdf, id=166, 361.35pt x 217.81375pt>
 File: "img/group2/mul diff shape".pdf Graphic file (type pdf)
 
 <use "img/group2/mul diff shape".pdf>
@@ -566,7 +560,7 @@ Package pdftex.def Info: "img/group2/mul diff shape".pdf used on input line 185
 .
 (pdftex.def)             Requested size: 180.67456pt x 108.9066pt.
 
-<"img/group2/mul same shape".pdf, id=161, 361.35pt x 217.81375pt>
+<"img/group2/mul same shape".pdf, id=167, 361.35pt x 217.81375pt>
 File: "img/group2/mul same shape".pdf Graphic file (type pdf)
 
 <use "img/group2/mul same shape".pdf>
@@ -582,14 +576,14 @@ Overfull \hbox (16.28113pt too wide) in paragraph at lines 185--187
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 197.
 
-<img/group2/arange.pdf, id=162, 361.35pt x 216.81pt>
+<img/group2/arange.pdf, id=168, 361.35pt x 216.81pt>
 File: img/group2/arange.pdf Graphic file (type pdf)
 
 <use img/group2/arange.pdf>
 Package pdftex.def Info: img/group2/arange.pdf used on input line 198.
 (pdftex.def)             Requested size: 180.67456pt x 108.40472pt.
 
-<"img/group2/argmax axis0".pdf, id=163, 361.35pt x 217.81375pt>
+<"img/group2/argmax axis0".pdf, id=169, 361.35pt x 217.81375pt>
 File: "img/group2/argmax axis0".pdf Graphic file (type pdf)
 
 <use "img/group2/argmax axis0".pdf>
@@ -604,13 +598,13 @@ Overfull \hbox (16.28113pt too wide) in paragraph at lines 198--200
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 202.
 
-<img/group2/exp.pdf, id=164, 361.35pt x 216.81pt>
+<img/group2/exp.pdf, id=170, 361.35pt x 216.81pt>
 File: img/group2/exp.pdf Graphic file (type pdf)
  <use img/group2/exp.pdf>
 Package pdftex.def Info: img/group2/exp.pdf used on input line 203.
 (pdftex.def)             Requested size: 180.67456pt x 108.40472pt.
 
-<img/group2/log.pdf, id=165, 361.35pt x 216.81pt>
+<img/group2/log.pdf, id=171, 361.35pt x 216.81pt>
 File: img/group2/log.pdf Graphic file (type pdf)
  <use img/group2/log.pdf>
 Package pdftex.def Info: img/group2/log.pdf used on input line 204.
@@ -620,24 +614,24 @@ Overfull \hbox (16.28113pt too wide) in paragraph at lines 203--205
 [][] [] 
  []
 
-[9 <./img/group2/abs.pdf> <./img/group2/argmax axis1.pdf> <./img/group2/maximum
-.pdf>] [10 <./img/group2/mean.pdf> <./img/group2/sum axis0.pdf> <./img/group2/s
-um axis1.pdf> <./img/group2/sum axisNone.pdf> <./img/group2/add same shape.pdf>
- <./img/group2/add diff shape.pdf> <./img/group2/sub same shape.pdf> <./img/gro
-up2/sub diff shape.pdf>] [11 <./img/group2/mul diff shape.pdf> <./img/group2/mu
-l same shape.pdf> <./img/group2/arange.pdf> <./img/group2/argmax axis0.pdf> <./
-img/group2/exp.pdf> <./img/group2/log.pdf>]
+[11 <./img/group2/abs.pdf> <./img/group2/argmax axis1.pdf> <./img/group2/maximu
+m.pdf>] [12 <./img/group2/mean.pdf> <./img/group2/sum axis0.pdf> <./img/group2/
+sum axis1.pdf> <./img/group2/sum axisNone.pdf> <./img/group2/add same shape.pdf
+> <./img/group2/add diff shape.pdf> <./img/group2/sub same shape.pdf> <./img/gr
+oup2/sub diff shape.pdf>] [13 <./img/group2/mul diff shape.pdf> <./img/group2/m
+ul same shape.pdf> <./img/group2/arange.pdf> <./img/group2/argmax axis0.pdf> <.
+/img/group2/exp.pdf> <./img/group2/log.pdf>]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 212.
 
-<img/dot128.pdf, id=415, 361.35pt x 217.81375pt>
+<img/dot128.pdf, id=422, 361.35pt x 216.81pt>
 File: img/dot128.pdf Graphic file (type pdf)
  <use img/dot128.pdf>
 Package pdftex.def Info: img/dot128.pdf used on input line 214.
-(pdftex.def)             Requested size: 252.94327pt x 152.46857pt.
+(pdftex.def)             Requested size: 252.94327pt x 151.76596pt.
 )
-(./chainer.tex [12 <./img/dot128.pdf>]
+(./chainer.tex [14 <./img/dot128.pdf>]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 14.
@@ -650,34 +644,34 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 52.
 
-<img/a.pdf, id=433, 428.89685pt x 363.11649pt>
+<img/a.pdf, id=441, 428.89685pt x 363.11649pt>
 File: img/a.pdf Graphic file (type pdf)
  <use img/a.pdf>
 Package pdftex.def Info: img/a.pdf used on input line 54.
 (pdftex.def)             Requested size: 257.34009pt x 217.87157pt.
- [13]
+ [15]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 62.
 
-<img/b.pdf, id=439, 492.02179pt x 321.7882pt>
+<img/b.pdf, id=445, 492.02179pt x 321.7882pt>
 File: img/b.pdf Graphic file (type pdf)
  <use img/b.pdf>
 Package pdftex.def Info: img/b.pdf used on input line 64.
 (pdftex.def)             Requested size: 246.01028pt x 160.89369pt.
- [14 <./img/a.pdf>]
+ [16 <./img/a.pdf>]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 69.
 
-<img/c.pdf, id=571, 434.55618pt x 333.68463pt>
+<img/c.pdf, id=577, 434.55618pt x 333.68463pt>
 File: img/c.pdf Graphic file (type pdf)
  <use img/c.pdf>
 Package pdftex.def Info: img/c.pdf used on input line 71.
 (pdftex.def)             Requested size: 260.73572pt x 200.21231pt.
- [15 <./img/b.pdf>]) (./discussion.tex) (./conclusion.tex) (./llncs.bbl [16 <./
+ [17 <./img/b.pdf>]) (./discussion.tex) (./conclusion.tex) (./llncs.bbl [18 <./
 img/c.pdf>])
-[17] (./llncs.aux)
+[19] (./llncs.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -685,7 +679,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  4072 strings out of 492995
  58358 string characters out of 6132703
- 201157 words of memory out of 5000000
+ 204330 words of memory out of 5000000
  7517 multiletter control sequences out of 15000+600000
  7965 words of font info for 29 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -701,10 +695,10 @@ mr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9
 fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on llncs.pdf (17 pages, 3477167 bytes).
+Output written on llncs.pdf (19 pages, 3504385 bytes).
 PDF statistics:
- 878 PDF objects out of 1000 (max. 8388607)
- 610 compressed objects within 7 object streams
+ 885 PDF objects out of 1000 (max. 8388607)
+ 615 compressed objects within 7 object streams
  0 named destinations out of 1000 (max. 500000)
  146 words of extra memory for PDF output out of 10000 (max. 10000000)
 
