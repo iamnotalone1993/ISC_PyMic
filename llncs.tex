@@ -12,7 +12,8 @@
 \usepackage{multirow}
 \usepackage{float}
 \usepackage{listings}
-\usepackage{color}	
+\usepackage{color}
+\usepackage{hyperref}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -43,20 +44,20 @@
 \pagestyle{headings}  % switches on printing of running heads
 \addtocmark{Hamiltonian Mechanics} % additional mark in the TOC
 %
-\title{An Improvement of PyMIC for Deep Learning Application on Intel Xeon Phi}
+\title{pyMIC2: A Library for Deep Learning Frameworks Run on the Intel\textsuperscript{\textregistered} Xeon Phi\textsuperscript{TM} Coprocessor}
 %
 \titlerunning{pyMIC2}  % abbreviated title (for running head)
 %                                     also used for the TOC unless
 %                                     \toctitle is used
 %
 \author{Anh-Tu Ngoc Tran\textsuperscript{(\Letter)} \and
-Phu  \and
-Tri Nguyen Minh \and
-Thanh-Dang Diep \orcidID{0000-0003-1163-7464} \and
-Hung \and
+Huu-Phu Nguyen   \and
+Minh Tri Nguyen  \and
+Thanh-Dang Diep  \and
+Nguyen Quang-Hung\and
 Nam Thoai
 }
-%
+%\orcidID{0000-0003-1163-7464}
 \authorrunning{Ivar Ekeland et al.} % abbreviated author list (for running head)
 %
 	%%%% list of authors for the TOC (use if author list has to be modified)
@@ -64,7 +65,7 @@ Nam Thoai
 Craig Chambers, Kim B. Bruce, and Elisa Bertino}
 %
 \institute{Faculty of Computer Science and Engineering\\ HCMC University of Technology, VNUHCM, Vietnam\\
-\email{\{51304672,51302990,...\}@hcmut.edu.vn},\\ %WWW home page:
+\email{\{51304672,51302990, nmtribk,dang,nqhung,namthoai\}@hcmut.edu.vn},\\ %WWW home page:
 %\texttt{http://users/\homedir iekeland/web/welcome.html}
 %\and
 %Universit\'{e} de Paris-Sud,
@@ -75,40 +76,33 @@ Craig Chambers, Kim B. Bruce, and Elisa Bertino}
 \maketitle              % typeset the title of the contribution
 
 \begin{abstract}
-The abstract should summarize the contents of the paper
-using at least 70 and at most 150 words. It will be set in 9-point
-font size and be inset 1.0 cm from the right and left margins.
-There will be two blank lines before and after the Abstract. \dots
 \input{abstract}
 
 \keywords{computational geometry, graph theory, Hamilton cycles}
 \end{abstract}
 %
-\section{Introduction, 2 pages}
+\section{Introduction}
 %
-With this chapter, the preliminaries are over, and we begin the search
-for periodic solutions to Hamiltonian systems. All this will be done in
-the convex case; that is, we shall study the boundary-value problem
 \input{introduction}
 
-\section{Background, 2 pages}
+\section{Background}
 \input{background}
 
-\section{Implementation, 2 pages}
+\section{Implementation}
 %table of function: name functionality, input, output
 \input{implementation}
 
-\section{Evaluation, 10 pages}
+\section{Evaluation}
 \input{function_evaluation}
 
 %%%% TRI %%%
 \input{chainer}
 %%%%%%%%%%%%
 
-\section{Discussion, 1page}
+\section{Discussione}
 \input{discussion}
 
-\section{Conclusions and Future Work, 1 page}
+\section{Conclusions and Future Work}
 \input{conclusion}
 
 \bibliographystyle{splncs03}
