@@ -1,3 +1,4 @@
+\label{background}
 \subsection{MIC Architecture}
 
 From the perspective of a developer, it is important to know features of MIC architecture if you want to optimize your applications so that it can run efficiently on Intel Xeon Phi. As depicted in Fig. \ref{fig:arch} \cite{phibook}, all processors and memory controllers are connected to a Core Ring Interconnect (CRI). Moreover, KNC has NUMA (non-uniform memory access) architecture which means that not all processors have equal access time to all memories.
@@ -35,7 +36,9 @@ To better understand how PyMIC works, we consider the following example. In Fig.
 
 \begin{figure}
     \centering
-    \begin{lstlisting}
+    \begin{lstlisting}[
+    basicstyle=\fontsize{10}{10}\selectfont\ttfamily, %or \small or \footnotesize etc.
+]
 1  import pymic
 2  import numpy as np
 3
@@ -71,7 +74,7 @@ To better understand how PyMIC works, we consider the following example. In Fig.
 
 \begin{figure}
     \centering
-    \begin{lstlisting}[language=C++]
+    \begin{lstlisting}[basicstyle=\fontsize{10}{10}\selectfont\ttfamily,language=C++]
 1  #include <pymic_kernel.h>
 2  #include <mkl.h>
 3

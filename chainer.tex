@@ -9,25 +9,25 @@ Chainer is a well-known framework for Artificial Neural Network(ANN). One of its
 \subsubsection{Experimental Setup:}
 %
 
-Our experiments are performed on a combination of CPU Intel Xeon E5 and Intel Xeon Phi 7120P coprocessor. The technical specifications of our system are described in Table \ref{tab:sys-spec} . The framework is compiled for coprocessor using Intel compiler version 17.0.4 as well as OpenMP 3.0 parallel programming API implementation by Intel  and MKL (2017.3.196). All measurements are carried out 100 times and averaged to eliminate variances in the resulting measurements.
-%
-\begin{table}[]
-\centering
-\caption{Hardware specifications}
-\label{tab:sys-spec}
-\begin{tabular}{|c|c|c|}
-\hline
-\textbf{Codename} 	& \textbf{CPU} 	& \textbf{Coprocessor} \\ \hline
-\textbf{Model} & Intel Xeon E5-2680V3  & Intel Xeon Phi 7120P \\
-\textbf{Microarchitecture} & Sandy Bridge EP & Intel Many Integrated Core \\
-\textbf{Clock frequency} & 2.50/3.30 GHz & 1.24/1.33 GHz \\
-\textbf{Memory Size} & 512 GB & 16 GB \\
-\textbf{Cache} & 30.0 MB SmartCache & 30.5 MB L2 \\
-\textbf{Max Memory Bandwidth} & 68 GB/s & 352 GB/s\\
-\textbf{Core/Threads} & 12/24 & 61/244 \\
-\hline
-\end{tabular} 
-\end{table}
+% Our experiments are performed on a combination of CPU Intel Xeon E5 and Intel Xeon Phi 7120P coprocessor. The technical specifications of our system are described in Table \ref{tab:sys-spec} . The framework is compiled for coprocessor using Intel compiler version 17.0.4 as well as OpenMP parallel programming API implementation by Intel  and MKL [*]version. All measurements are carried out 100 times and averaged to eliminate variances in the resulting measurements.
+% %
+% \begin{table}[]
+% \centering
+% \caption{Hardware specifications}
+% \label{tab:sys-spec}
+% \begin{tabular}{|c|c|c|}
+% \hline
+% \textbf{Codename} 	& \textbf{CPU} 	& \textbf{Coprocessor} \\ \hline
+% \textbf{Model} & Intel Xeon E5-2680V3  & Intel Xeon Phi 7120P \\
+% \textbf{Microarchitecture} & Sandy Bridge EP & Intel Many Integrated Core \\
+% \textbf{Clock frequency} & 2.50/3.30 GHz & 1.24/1.33 GHz \\
+% \textbf{Memory Size} & 512 GB & 16 GB \\
+% \textbf{Cache} & 30.0 MB SmartCache & 30.5 MB L2 \\
+% \textbf{Max Memory Bandwidth} & 68 GB/s & 352 GB/s\\
+% \textbf{Core/Threads} & 12/24 & 61/244 \\
+% \hline
+% \end{tabular} 
+% \end{table}
 
 
 We evaluate our approach using the MNIST \cite{mnist} dataset of handwritten digits including training set of 60,000 examples,  and 10,000 test images, each image contains 28x28 pixel grey levels. The architecture of testing ANNs has 1000, 1500, 2000, 2500 ... 5500 units, each unit represents a node in the network's hidden layer. In order to simplify the performance evaluation process, we just modify the ANNs with one hidden layer, which means our ANNs have only 3 layers which are input, output and hidden. Detailed information of the ANNs used in our evaluation are shown in Table \ref{tab:ann-info}.
@@ -70,7 +70,7 @@ In this experiment, we evaluate pyMIC2's computational capabilities in Intel Xeo
 \label{b.pdf}
 \end{figure}
 
-The biggest matrix size that the \textit{dot} function must perform during the execution of the above network is [784,60000] x [60000,1000], which corresponds to 70.8\% total run time used to synchronize data between host and device. Although the purely computation time of ANN-2 on the coprocessor is approximately 1.93 times faster, the total training time was about 1.78 times slower than ANN-1 on the full core CPU. The reason for this drop in performance is transmitting data between hosts and devices repeatedly leading to overlap and redundancy. However, the cause of this result is that the pyMIC2 integration into Chainer has not been optimized, therefore, we can significantly improve the result as pyMIC2 provides objects and functions that strictly support memory allocation and deallocation on Intel Xeon Phi coprocessor. In other words, we must fully understand how Chainer organizes the data so that we can reduce the communication between host and device, thereby increasing the performance of training process. As mentioned above, in this paper we just focus on the computing capabilities; thus, in the rest of the experiment, the number of units is raised to 5500 with the aim of increasing the size of the largest matrix to [784,60000] x [60000,5500]. The observed result shows that the ratio between computation time on coprocessor and total training time is almost unchanged at about 30\%. In addition, when the size of one of the two \textit{dot} operands expanded 5.5 times, the computation time on the Intel Xeon Phi increased only 3.8 times, while the CPU run time is grown up to 7.8 times, and total training time achieve 1.2 times faster than CPU. Thus, with several medium configuration CPUs, there is the possibility that we can speed up with Intel Xeon Phi for large-scale computing in ANNs.
+The biggest matrix size that the \textit{dot} function must perform during the execution of the above network is [784,60000] x [60000,1000], which corresponds to 70.8\% total run time used to synchronize data between host and device. Although the purely computation time of ANN-2 on the coprocessor is approximately 1.93 times faster, the total training time was about 1.78 times slower than ANN-1 on the full core CPU. The reason for this drop in performance is transmitting data between hosts and devices repeatedly leading to overlap and redundancy. However, the cause of this result is that the pyMIC2 integration into Chainer has not been optimized, therefore, we can significantly improve the result as pyMIC2 provides objects and functions that strictly support memory allocation and deallocation on Intel Xeon Phi coprocessor. In other words, we must fully understand how Chainer organizes the data so that we can reduce the communication between host and device and increase the performance of training process. As mentioned above, in this paper we just focus on the computing capabilities; thus, in the rest of the experiment, the number of units is raised to 5500 with the aim of increasing the size of the largest matrix to [784,60000] x [60000,5500]. The observed result shows that the ratio between computation time on coprocessor and total training time is almost unchanged at about 30\%. In addition, when the size of one of the two \textit{dot} operands expanded 5.5 times, the computation time on the Intel Xeon Phi increased only 3.8 times, while the CPU run time is grown up to 7.8 times, and total training time achieve 1.2 times faster than CPU. Thus, with several medium configuration CPUs, there is the possibility that we can speed up with Intel Xeon Phi for large-scale computing in ANNs.
 \begin{figure}[]
 \centering
 \includegraphics[scale=0.6]{img/c.pdf}

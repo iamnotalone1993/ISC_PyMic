@@ -9,12 +9,34 @@ Moreover, we can improve data transfer performance by using huge memory pages. W
 
 %[https://software.intel.com/en-us/mkl-linux-developer-guide-improving-performance-on-intel-xeon-phi-coprocessors].
 
-In summary, to achieve the best performance, our system is configured to KMP\_AFFINITY=compact, MIC\_USE\_2MB\_BUFFERS=16K. Additionally,  all of our benchmarks are run 100 times.
+In summary, to achieve the best performance, our system is configured to KMP\_AFFINITY=compact, MIC\_USE\_2MB\_BUFFERS=16K. Additionally, all measurements are carried out 100 times and averaged to eliminate variances in the resulting measurements.
 
 %, and any jitter will be removed to guarantee the accuracy of all benchmarks.
 
+% Our experiments are performed on a combination of CPU Intel Xeon E5 and Intel Xeon Phi 7120P coprocessor. The technical specifications of our system are described in Table \ref{tab:sys-spec} . The framework is compiled for coprocessor using Intel compiler version 17.0.4 as well as OpenMP parallel programming API implementation by Intel  and MKL [*]version. All measurements are carried out 100 times and averaged to eliminate variances in the resulting measurements.
+% %
+% \begin{table}[]
+% \centering
+% \caption{Hardware specifications}
+% \label{tab:sys-spec}
+% \begin{tabular}{|c|c|c|}
+% \hline
+% \textbf{Codename} 	& \textbf{CPU} 	& \textbf{Coprocessor} \\ \hline
+% \textbf{Model} & Intel Xeon E5-2680V3  & Intel Xeon Phi 7120P \\
+% \textbf{Microarchitecture} & Sandy Bridge EP & Intel Many Integrated Core \\
+% \textbf{Clock frequency} & 2.50/3.30 GHz & 1.24/1.33 GHz \\
+% \textbf{Memory Size} & 512 GB & 16 GB \\
+% \textbf{Cache} & 30.0 MB SmartCache & 30.5 MB L2 \\
+% \textbf{Max Memory Bandwidth} & 68 GB/s & 352 GB/s\\
+% \textbf{Core/Threads} & 12/24 & 61/244 \\
+% \hline
+% \end{tabular} 
+% \end{table}
+
 \subsection{Evaluation of computing functions in pyMIC2}
-NumPy with easy-to-use Python API is a big, high performance computing library and has been developed and updated for a decade. In pyMIC2, we only implement several unit functions that mainly support deep learning. We divide these into three group (Table \ref{list-func}):
+\label{sec:function_eval}
+NumPy with easy-to-use Python API is a big, high performance computing library and has been developed and updated for a decade. In pyMIC2, we modify the existing functions in pyMIC and provide more compute functions so that users can easily use them to develop high-level fucntions in Deep Learning. To clarify, we divide these into three group (Table \ref{list-func}):
+
 \begin{itemize}
 	\item The first group is related to logical operations.
 	\item The second group is about arithmetic, exponential and logarithmic functions. 
@@ -54,7 +76,7 @@ NumPy with easy-to-use Python API is a big, high performance computing library a
 
 \begin{table}[]
 \centering
-\caption{List of computing functions}
+\caption{List of compute functions}
 \label{list-func}
 \begin{tabular}{|c|c|}
 \hline
@@ -87,7 +109,7 @@ Group 3 										& MATRIX MULTIPLICATION \\ \hline
 
 %In each group, there will be a few graphs that represent for the whole group, and a table which contains execution time of all the functions in that group. The reason we do that because the appearance of graphs of all functions looks almost the same, and cannot be distinguished by naked eyes.Therefore, beside graphs, we have a table.
 
-Input data to pyMIC2 functions can be an 1 or 2 two-dimension arrays or none, which is depending on operations. Size of all the dimensions is equal to N that increases from 128 to 16384. Furthermore, each element of an array is a 64-bit number which can be integer or float. In each benchmark, there are three lines:
+In each group, there will be a graph that represents for the whole group. If there is any exception, a few more graphs will be added to to clarify the exception. Input data to pyMIC2 functions can be an 1 or 2 two-dimension arrays or none, which is depending on operations. Size of all the dimensions is equal to N that increases from 128 to 16384. Furthermore, each element of an array is a 64-bit number which can be integer or float. In each benchmark, there are three lines:
 \begin{itemize}
 	\item The blue one represents for execution time of a NumPy function.
 	\item The orange one is for pyMIC2 kernel, which is the time only for computing.
@@ -98,14 +120,16 @@ Input data to pyMIC2 functions can be an 1 or 2 two-dimension arrays or none, wh
 
 %In the first group, there are 4 functions of logical operations (table \ref{tab:group1}). When you look at graph of EQ function (figure \ref{fig:func-or}), the pymic line is time-comsuming because of data transfering through PCIe. The others two nearly take the same amount of time to finish the job, when N is approximately smaller than 9000. However, when N gets bigger, pymic kernel takes less time to finish in comparison to numpy. This happens the same for other functions, when we look at table \ref{tab:group1}.
 
-In the first group, there are 4 functions of logical operations. The pymic line is time-consuming because of data transferring through PCIe. The other two nearly take the same amount of time to finish the job, when N is approximately smaller than 9000. However, when N gets bigger, pymic kernel takes less time to finish in comparison to numpy.
+In the first group, there are 4 functions of logical operations. The pymic line is time-consuming because of data transferring through PCIe. The other two nearly take the same amount of time to finish the job, when N is approximately smaller than 9000. However, when N gets bigger, pymic kernel takes less time to finish in comparison to numpy (Fig.\ref{fig:group1}).
+
 \begin{figure}[]
 \includegraphics[scale=0.5]{img/group1/eq.pdf}
-\includegraphics[scale=0.5]{img/group1/gt.pdf}
-\includegraphics[scale=0.5]{img/group1/ne.pdf}
-\includegraphics[scale=0.5]{img/group1/or.pdf}
-\caption{Benchmark of group 1}
-\label{fig:func-or}
+% \includegraphics[scale=0.5]{img/group1/gt.pdf}
+% \includegraphics[scale=0.5]{img/group1/ne.pdf}
+% \includegraphics[scale=0.5]{img/group1/or.pdf}
+\centering
+\caption{Benchmark of function OR}
+\label{fig:group1}
 \end{figure}
 
 %\begin{table}[]
@@ -148,42 +172,29 @@ In the first group, there are 4 functions of logical operations. The pymic line 
 %\item Finally,we have three functions that do not run as good as numpy functions. Although, when N gets bigger than N 7500, they starts to works as efficiently as those of numpy.  
 %\end{itemize}
 %%%%%%%%%%
-The second group consists of functions of arithmetic, exponent and logarithm. As usual, pymic line of most functions is the slowest, but when N is getting larger, pymic starts to work more efficient and runs faster than numpy. However, there are still some exceptional functions:
+The second group consists of functions of arithmetic, exponent and logarithm. As mentioned in Sec.\ref{enhancement}, the comparison of three modified functions to add, sub, mul two arrays with the same shape before and after parallelization are shown in Fig.\ref{fig:add_b_a}, \ref{fig:sub_b_a}, \ref{fig:mul_b_a}. Moreover, when comparing to NumPy, as usual, pymic line of most functions is the slowest, but when N is getting larger, pymic starts to work more efficient and runs faster than numpy (Fig.\ref{fig:group2}). However, there are still some exceptional functions:
 
-\begin{figure}
-\includegraphics[scale=0.5]{img/group2/abs.pdf}
-\includegraphics[scale=0.5]{{"img/group2/argmax axis1"}.pdf}
-\end{figure}
-
-\begin{figure}
+\begin{figure}[]
 \centering
-\includegraphics[scale=0.5]{img/group2/maximum.pdf}
+\includegraphics[scale=0.5]{img/add_b_a.pdf}
+\caption{Function ADD before and after parallelization}
+\label{fig:add_b_a}
+
+\includegraphics[scale=0.5]{img/sub_b_a.pdf}
+\caption{Function SUB before and after parallelization}
+\label{fig:sub_b_a}
+
+\includegraphics[scale=0.5]{img/mul_b_a.pdf}
+\caption{Function MUL before and after parallelization}
+\label{fig:mul_b_a}
 \end{figure}
 
-\begin{figure}[]
-\includegraphics[scale=0.5]{img/group2/mean.pdf}
-\includegraphics[scale=0.5]{{"img/group2/sum axis0"}.pdf}
-\end{figure}
-
-\begin{figure}[]
-\includegraphics[scale=0.5]{{"img/group2/sum axis1"}.pdf}
-\includegraphics[scale=0.5]{{"img/group2/sum axisNone"}.pdf}
-\end{figure}
-
-\begin{figure}[]
-\includegraphics[scale=0.5]{{"img/group2/add same shape"}.pdf}
-\includegraphics[scale=0.5]{{"img/group2/add diff shape"}.pdf}
-\end{figure}
-
-\begin{figure}[]
-\includegraphics[scale=0.5]{{"img/group2/sub same shape"}.pdf}
-\includegraphics[scale=0.5]{{"img/group2/sub diff shape"}.pdf}
-\end{figure}
-
-\begin{figure}[]
-\includegraphics[scale=0.5]{{"img/group2/mul diff shape"}.pdf}
-\includegraphics[scale=0.5]{{"img/group2/mul same shape"}.pdf}
-\end{figure}
+ \begin{figure}
+ \centering
+ \includegraphics[scale=0.5]{img/group2/maximum.pdf}
+ \label{fig:group2}
+ \caption{Benchmark of function MAXIMUM}
+ \end{figure}
 
 \begin{itemize}
 	\item Function ARGMAX axis=0
@@ -191,22 +202,28 @@ The second group consists of functions of arithmetic, exponent and logarithm. As
 	\item Function EXP and LOG
 \end{itemize}
 
-In function ARANGE, pymic line and numpy are approximately the same because it requires no data transferred to coprocessor. Beside function ARANGE, the numpy line of all functions mentioned above is slower than pymic line which includes transferring time. The results of function EXP and LOG can be explained that for exponential and logarithmic functions, Intel Compiler includes a mathematical software library containing highly optimized and very accurate mathematical functions, commonly used in scientific or graphic applications \cite{mathlib}.
+In function ARANGE, pymic line and numpy are approximately the same because it requires no data transferred to coprocessor. 
+
+Beside function ARANGE, the numpy line of all functions mentioned above is slower than pymic line which includes transferring time. In NumPy, not all functions are parallelized, which leads to the results of function ARGMAX axis=0, EXP and LOG. Furthermore, the results of function EXP and LOG can be explained that for exponential and logarithmic functions, Intel Compiler includes a mathematical software library containing highly optimized and very accurate mathematical functions, commonly used in scientific or graphic applications \cite{mathlib}.
 
 \begin{figure}[]
 \includegraphics[scale=0.5]{img/group2/arange.pdf}
+\caption{Benchmark of function ARANGE}
 \includegraphics[scale=0.5]{{"img/group2/argmax axis0"}.pdf}
-\end{figure}
+\caption{Benchmark of function ARGMAX axis0}
+%\end{figure}
 
-\begin{figure}[]
+%\begin{figure}[]
 \includegraphics[scale=0.5]{img/group2/exp.pdf}
+\caption{Benchmark of function EXP}
 \includegraphics[scale=0.5]{img/group2/log.pdf}
+\caption{Benchmark of function LOG}
 \end{figure}
 
 \subsubsection{Group 3}
 In the final group, we use FLOPS (floating point operation per second) for matrix multiplication benchmark instead of time so that we can know how faster this function can achieve in comparison to theoretical performance. This function in pymic will call one of functions of Intel Math Kernel Library (MKL). General matrix multiplication of Intel MKL has been optimized for Intel architecture and proved the efficiency even for small size. 
 
-In Fig. \ref{fig:func-dot}, we can see that peak performance of numpy, pymic kernel and pymic lines are 574, 849 and 596 GLOPS respectively. For small size matrix, numpy works more efficiently than pymic kernel, but pymic kernel starts to outperform numpy when N is greater than 2500. As pymic kernel, pymic also runs faster than numpy when N is greater than 13000. The computation time of pymic can compensate its transferring time, which leads to better performance than Numpy. Moreover, without including transferring overhead, pymic kernel runs 200 GFLOPS faster than pymic
+In Fig.\ref{fig:func-dot}, we can see that peak performance of numpy, pymic kernel and pymic lines are 574, 849 and 596 GLOPS respectively. For small size matrix, numpy works more efficiently than pymic kernel, but pymic kernel starts to outperform numpy when N is greater than 2500. As pymic kernel, pymic also runs faster than numpy when N is greater than 13000. The computation time of pymic can compensate its transferring time, which leads to better performance than Numpy. Moreover, without including transferring overhead, pymic kernel runs 200 GFLOPS faster than pymic
 
 \begin{figure}[]
 \centering

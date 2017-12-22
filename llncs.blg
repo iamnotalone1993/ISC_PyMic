@@ -3,61 +3,47 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: llncs.aux
 The style file: splncs03.bst
 Database file #1: refs.bib
-Warning--to sort, need author or key in caffe
-Warning--to sort, need author or key in tensorflow
-Warning--to sort, need author or key in theano
-Warning--to sort, need author or key in torch
-Warning--to sort, need author or key in top500
-Warning--to sort, need author or key in deep-frame-mic
-Warning--to sort, need author or key in pymic
-Warning--to sort, need author or key in Numpy
-Warning--to sort, need author or key in Chainer
-Warning--to sort, need author or key in threadaffinity
-Warning--to sort, need author or key in bigmempage
-Warning--to sort, need author or key in mathlib
-Warning--to sort, need author or key in backprop
-Warning--to sort, need author or key in mnist
-Warning--to sort, need author or key in docker
+Warning--I didn't find a database entry for "colfaxbook"
 Warning--empty year in phibook
-You've used 25 entries,
+You've used 1 entry,
             2785 wiz_defined-function locations,
-            683 strings with 7949 characters,
-and the built_in function-call counts, 8966 in all, are:
-= -- 653
-> -- 280
-< -- 6
-+ -- 123
-- -- 98
-* -- 478
-:= -- 1053
-add.period$ -- 27
-call.type$ -- 25
-change.case$ -- 125
+            588 strings with 4532 characters,
+and the built_in function-call counts, 345 in all, are:
+= -- 21
+> -- 12
+< -- 0
++ -- 5
+- -- 4
+* -- 20
+:= -- 55
+add.period$ -- 1
+call.type$ -- 1
+change.case$ -- 5
 chr.to.int$ -- 0
-cite$ -- 41
-duplicate$ -- 808
-empty$ -- 923
-format.name$ -- 108
-if$ -- 1966
+cite$ -- 2
+duplicate$ -- 32
+empty$ -- 29
+format.name$ -- 5
+if$ -- 64
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 176
-newline$ -- 80
-num.names$ -- 20
-pop$ -- 446
+int.to.str$ -- 1
+missing$ -- 8
+newline$ -- 8
+num.names$ -- 2
+pop$ -- 19
 preamble$ -- 1
-purify$ -- 97
+purify$ -- 4
 quote$ -- 0
-skip$ -- 306
+skip$ -- 8
 stack$ -- 0
-substring$ -- 325
-swap$ -- 385
-text.length$ -- 6
+substring$ -- 5
+swap$ -- 12
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 98
-warning$ -- 16
-while$ -- 40
-width$ -- 27
-write$ -- 204
-(There were 16 warnings)
+type$ -- 4
+warning$ -- 1
+while$ -- 2
+width$ -- 2
+write$ -- 12
+(There were 2 warnings)

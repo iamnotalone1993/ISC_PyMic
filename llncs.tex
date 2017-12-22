@@ -14,6 +14,9 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage{hyperref}
+\usepackage{array}
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -52,7 +55,7 @@
 %
 \author{Anh-Tu Ngoc Tran\textsuperscript{(\Letter)} \and
 Huu-Phu Nguyen   \and
-Minh Tri Nguyen  \and
+Minh-Tri Nguyen  \and
 Thanh-Dang Diep  \and
 Nguyen Quang-Hung\and
 Nam Thoai
@@ -88,8 +91,9 @@ Craig Chambers, Kim B. Bruce, and Elisa Bertino}
 \section{Background}
 \input{background}
 
-\section{Implementation}
+\section{An enhancement of pyMIC}
 %table of function: name functionality, input, output
+
 \input{implementation}
 
 \section{Evaluation}
@@ -98,9 +102,6 @@ Craig Chambers, Kim B. Bruce, and Elisa Bertino}
 %%%% TRI %%%
 \input{chainer}
 %%%%%%%%%%%%
-
-\section{Discussione}
-\input{discussion}
 
 \section{Conclusions and Future Work}
 \input{conclusion}
